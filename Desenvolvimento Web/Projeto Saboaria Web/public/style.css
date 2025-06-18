@@ -1,64 +1,148 @@
+/* Paleta suave: lilás e verde claro */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfaff;
+  color: #403144;
 }
 
 header {
-  background-color: #c9cbbf;
+  background-color: #e7dff3;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 24px;
+#logo img {
+  height: 60px;
 }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: #000;
+  color: #314432;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
-.aviso {
-  background-color: #dcdcdc;
-  padding: 10px;
+nav a:hover {
+  color: #7e69a0;
+}
+
+#aviso {
+  background-color: #7331ee;
+  padding: 12px;
   text-align: center;
   font-weight: bold;
   font-size: 14px;
+  border-top: 2px solid #7331ee;
+  border-bottom: 2px solid #7331ee;
+  color: #ffffff;
 }
 
-.banner {
+#banner {
   text-align: center;
-  padding: 20px;
-  font-size: 20px;
-  background-color: #e6e6e6;
+  padding: 30px;
+  font-size: 22px;
+  background-color: #f1e8fc;
+  color: #403144;
 }
 
-.produtos {
+#produtos {
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.produtos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 40px;
-  background-color: #fff;
 }
 
-.produto {
+.card-produto {
+  background-color: #f5f0fb;
   width: 200px;
-  height: 200px;
-  background-color: #c9cbbf;
-  border-radius: 20px;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.descricao {
+.card-produto img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card-produto p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #403144;
+}
+
+
+/* Seções com formulário */
+#selecao-produtos,
+#personalizar-sabonete,
+#desenvolvedores {
   padding: 40px;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #fcfcfc;
   text-align: center;
-  background-color: #ffffff;
+  border-top: 2px solid #c6b2de;
 }
+
+#selecao-produtos h2,
+#personalizar-sabonete h2,
+#desenvolvedores h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #403144;
+}
+
+#selecao-produtos label,
+#personalizar-sabonete label {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+#selecao-produtos button,
+#personalizar-sabonete button {
+  padding: 10px 20px;
+  background-color: #44b475;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+#selecao-produtos button:hover,
+#personalizar-sabonete button:hover {
+  background-color: #13eb71;
+}
+
+select {
+  padding: 8px;
+  width: 80%;
+  margin-top: 5px;
+  border: 1px solid #c4b2d9;
+  border-radius: 5px;
+}
+
+/* Desenvolvedores */
+#desenvolvedores p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #403144;
+}
+

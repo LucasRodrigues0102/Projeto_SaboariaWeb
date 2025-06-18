@@ -1,0 +1,33 @@
+
+
+{
+  "essencias": [
+    "Algodão",
+    "Algas",
+    "Aveia",
+    "Calêndula",
+    "Capim Limão",
+    "Folha de Tangerina",
+    "Flor de Cerejeira",
+    "Mel",
+    "Lavanda"
+  ],
+  "cores": [
+    "Amarelo",
+    "Vermelho",
+    "Verde",
+    "Azul",
+    "Laranja",
+    "Roxo",
+    "Rosa",
+    "Lilás"
+  ],
+  "formas": [
+    { "nome": "Oval", "preco": 12.00 },
+    { "nome": "Oval com desenho", "preco": 12.00 },
+    { "nome": "Quadrada", "preco": 12.00 },
+    { "nome": "Flor pequena", "preco": 8.00 },
+    { "nome": "Urso", "preco": 10.00 },
+    { "nome": "Quadradinho com desenho", "preco": 8.00 }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Sabonete Oval",
+    "imagem": "Imagens/oval.jpg"
+  },
+  {
+    "nome": "Sabonete Oval com Desenho",
+    "imagem": "Imagens/oval-desenho.jpg"
+  },
+  {
+    "nome": "Sabonete Quadrado",
+    "imagem": "Imagens/quadrado.jpg"
+  },
+  {
+    "nome": "Sabonete Urso",
+    "imagem": "Imagens/urso.jpg"
+  },
+  {
+    "nome": "Sabonete Flor Pequena",
+    "imagem": "Imagens/flor-pequena.jpg"
+  },
+  {
+    "nome": "Sabonete Quadradinho com Desenho",
+    "imagem": "Imagens/quadradinho-desenho.jpg"
+  }
+]

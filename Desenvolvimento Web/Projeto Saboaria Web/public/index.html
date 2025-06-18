@@ -5,43 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabonetes Artesanais</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
 </head>
 <body>
   <header>
-    <div class="logo">LOGO</div>
-    <nav>
-      <a href="#">Página Inicial</a>
-      <a href="#">Faça seu Pedido</a>
-      <a href="#">Sobre Nós</a>
-      <a href="#">Sobre Desenvolvedores</a>
-    </nav>
-  </header>
+  <div id="logo">
+    <img src="/Imagens/LOGO Saboaria Web.png" alt="Logo Sabonetes Artesanais">
+  </div>
+  <nav>
+    <a href="#banner">Página Inicial</a>
+    <a href="#produtos">Veja os Produtos</a>
+    <a href="#personalizar-sabonete">Monte o Seu</a>
+    <a href="#desenvolvedores">Sobre Desenvolvedores</a>
+  </nav>
+</header>
 
-  <section class="aviso">
+
+  <section id="aviso">
+
     GANHE 10% DE DESCONTO NA SUA PRIMEIRA COMPRA. FRETE GRÁTIS EM COMPRAS ACIMA DE R$249,00. PAGAMENTO COM PIX TEM 5% DE DESCONTO.
+    
   </section>
 
-  <section class="banner">
+
+  <section id="banner">
+
     <h1>CONHEÇA NOSSOS PRODUTOS</h1>
+
   </section>
 
-  <section class="produtos">
-    <div class="produto"></div>
-    <div class="produto"></div>
-    <div class="produto"></div>
-    <div class="produto"></div>
-    <div class="produto"></div>
-    <div class="produto"></div>
+
+  <section id="produtos">
+
+  <h2 class="titulo-secao">Produtos</h2>
+  <div class="produtos-container" id="lista-produtos"></div>
+
   </section>
 
-  <section class="descricao">
-    <p>
-      Bem-vindo ao nosso site, onde a arte da saboaria se encontra com a ciência do cuidado com a pele!
-      Aqui, acreditamos que cada banho é uma oportunidade de transformação e renovação. Nossos sabonetes
-      são cuidadosamente elaborados com ingredientes naturais e fragrâncias envolventes, proporcionando
-      uma experiência sensorial única que vai além da limpeza. Navegue pela nossa seleção e descubra
-      produtos que não apenas cuidam da sua pele, mas também respeitam o meio ambiente.
-    </p>
+
+
+  <section id="personalizar-sabonete">
+  <h2>Monte seu Sabonete</h2>
+
+  <form id="formPersonalizado">
+    <label for="essencia">Escolha a Essência:</label><br>
+    <select id="essencia" required></select><br><br>
+
+    <label for="cor">Escolha a Cor:</label><br>
+    <select id="cor" required></select><br><br>
+
+    <label for="forma">Escolha a Forma:</label><br>
+    <select id="forma" required></select><br><br>
+
+    <label for="quantidade">Quantidade:</label><br>
+    <input type="number" id="quantidade" min="1" value="1" required><br><br>
+
+    <p id="preco-forma" style="font-weight: bold;"></p>
+    <p id="preco-total" style="font-weight: bold;"></p>
+
+    <button type="submit">Enviar Pedido pelo WhatsApp</button>
+</form>
+
+</section>
+
+
+
+
+  <section id="desenvolvedores">
+    <h2>Sobre Desenvolvedores</h2>
+<p>
+  Este site foi desenvolvido por <strong>Isac</strong>, <strong>Giovana</strong> e <strong>Lucas</strong>, estudantes do curso de 
+  <em>Tecnologia em Análise e Desenvolvimento de Sistemas</em> no 
+  <strong>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) – Câmpus Campinas</strong>.
+</p>
+<p>
+  O projeto tem como objetivo aplicar conhecimentos de desenvolvimento web em um contexto real, 
+  unindo tecnologia e empreendedorismo familiar. A criação do site visa auxiliar na divulgação 
+  e venda de sabonetes artesanais, promovendo produtos naturais, sustentáveis e feitos com carinho.
+</p>
+
   </section>
 </body>
 </html>
