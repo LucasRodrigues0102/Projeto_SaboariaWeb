@@ -146,3 +146,61 @@ select {
   color: #403144;
 }
 
+/* Estilo da página Fale Conosco */
+.contato {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fdf9ff;
+  border: 2px solid #d7c9e6;
+  border-radius: 10px;
+  text-align: left;
+  color: #403144;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.contato h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #7e69a0;
+  text-align: center;
+}
+
+.contato p {
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.contato a {
+  color: #7e69a0;
+  text-decoration: none;
+}
+
+.contato a:hover {
+  text-decoration: underline;
+}
+
+.conteudo-pagina {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fdf9ff;
+  border: 2px solid #d7c9e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  color: #403144;
+  text-align: left;
+}
+
+.conteudo-pagina h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #7e69a0;
+  text-align: center;
+}
+
+.conteudo-pagina p {
+  font-size: 18px;
+  line-height: 1.6;
+}
