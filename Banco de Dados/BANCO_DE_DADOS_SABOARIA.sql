@@ -38,12 +38,12 @@ CREATE TABLE itens_pedido (
 );
 
 INSERT INTO produtos (nome, descricao, preco) VALUES
-('Sabonete Com Brinquedo', 'Calmante e relaxante', 29.90),
-('Sabonete sereia', 'Purificante para pele oleosa', 29.90),
-('Mini Sabonete', 'Sabonete de gaveta', 8.00),
-('Sabonete Artesanal', 'Desintoxicante e esfoliante', 12.00),
-('Sabonete Lembrancinha', 'Lembrancinha de festa', 4.00),
-('Sabonete de Aveia e Mel', 'Suavizante para peles sensíveis', 16.90);
+('Oval', 'Sabonete Oval', 12.00),
+('Oval com desenho', 'Sabonete Oval com desenho', 12.00),
+('Quadrada', 'Sabonete Quadrado', 12.00),
+('Flor Pequena', 'Sabonete Flor Pequena', 8.00),
+('Urso', 'Sabonete Urso', 10.00),
+('Quadradinho com desenho', 'Sabonete Quadradinho com desenho', 8.00);
 
 
 INSERT INTO clientes (nome, email, telefone, endereco)
@@ -63,12 +63,12 @@ INSERT INTO pedidos (id_cliente) VALUES
 INSERT INTO itens_pedido (id_pedido, id_produto, quantidade, preco_unitario)
 VALUES 
 (1, 1, 2, 12.90),
-(1, 3, 1, 13.90);
+(1, 3, 1, 12.00);
 
 INSERT INTO itens_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALUES 
-(2, 2, 3, 29.90),
-(2, 4, 2, 12.00),
-(3, 5, 10, 4.00);
+(2, 2, 3, 12.00),
+(2, 4, 2, 8.00),
+(3, 5, 10, 10.00);
 
 
 
@@ -116,6 +116,9 @@ JOIN clientes c ON p.id_cliente = c.id_cliente
 JOIN itens_pedido ip ON p.id_pedido = ip.id_pedido
 JOIN produtos pr ON ip.id_produto = pr.id_produto;
 
+SELECT * FROM vw_detalhes_pedidos;
+
+
 -- View 2: Produtos mais vendidos
 
 DROP VIEW IF EXISTS vw_produtos_mais_vendidos;
@@ -125,6 +128,8 @@ SELECT pr.nome, SUM(ip.quantidade) AS total_vendido
 FROM itens_pedido ip
 JOIN produtos pr ON ip.id_produto = pr.id_produto
 GROUP BY pr.nome;
+
+SELECT * FROM vw_produtos_mais_vendidos;
 
 
 -- View 3: Total gasto por cliente
@@ -138,6 +143,8 @@ JOIN pedidos p ON c.id_cliente = p.id_cliente
 JOIN itens_pedido ip ON p.id_pedido = ip.id_pedido
 GROUP BY c.nome;
 
+SELECT * FROM vw_total_gasto_cliente;
+
 
 -- View 4: Pedidos pendentes
 
@@ -149,8 +156,10 @@ FROM pedidos p
 JOIN clientes c ON p.id_cliente = c.id_cliente
 WHERE p.status = 'Pendente';
 
+SELECT * FROM vw_pedidos_pendentes;
 
--- Procedures e Funções (pelo menos 4)
+
+-- Procedures e Funções
 
 -- Procedure 1: Inserir novo cliente
 
