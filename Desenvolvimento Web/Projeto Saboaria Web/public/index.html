@@ -1,74 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sabonetes Artesanais</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <head>
 
-</head>
-<body>
-  <header>
-  <div id="logo">
-    <img src="/Imagens/LOGO Saboaria Web.png" alt="Logo Sabonetes Artesanais">
-  </div>
-  <nav>
-  <a href="index.html">Início</a>
-  <a href="sobre.html">Sobre</a>
-  <a href="equipe.html">Equipe</a>
-  <a href="faleconosco.html">Fale Conosco</a>
-  </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabonetes Artesanais</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="js/script.js" defer></script>
 
-</header>
+  </head>
 
+  <body>
 
-  <section id="aviso">
+    <header>
+      <div id="logo">
+        <img src="img/LOGO-Saboaria-Web.png" alt="Logo Sabonetes Artesanais">
+      </div>
+      <nav>
+      <a href="index.html">Início</a>
+      <a href="html/sobre.html">Sobre</a>
+      <a href="html/equipe.html">Equipe</a>
+      <a href="html/faleconosco.html">Fale Conosco</a>
+      <a href="#" id="btn-login">Login</a>
+      </nav>
 
-    GANHE 10% DE DESCONTO NA SUA PRIMEIRA COMPRA. FRETE GRÁTIS EM COMPRAS ACIMA DE R$249,00. PAGAMENTO COM PIX TEM 5% DE DESCONTO.
-    
-  </section>
+    </header>
 
+   <div id="aviso">
+      <p id="texto-aviso"></p>
+      <button id="editar-aviso" style="display: none;">✏️ Editar aviso</button>
+    </div>
 
-  <section id="banner">
+    <section id="banner">
 
-    <h1>CONHEÇA NOSSOS PRODUTOS</h1>
+      <h1>CONHEÇA NOSSOS PRODUTOS</h1>
 
-  </section>
-
-
-  <section id="produtos">
-
-  <h2 class="titulo-secao">Produtos</h2>
-  <div class="produtos-container" id="lista-produtos"></div>
-
-  </section>
+    </section>
 
 
+    <section id="produtos">
 
-  <section id="personalizar-sabonete">
-  <h2>Monte seu Sabonete</h2>
+    <h2 class="titulo-secao">Produtos</h2>
+    <div class="produtos-container" id="lista-produtos"></div>
 
-  <form id="formPersonalizado">
-    <label for="essencia">Escolha a Essência:</label><br>
-    <select id="essencia" required></select><br><br>
+    </section>
 
-    <label for="cor">Escolha a Cor:</label><br>
-    <select id="cor" required></select><br><br>
+    <section id="personalizar-sabonete">
+      <h2>Monte seu Sabonete</h2>
 
-    <label for="forma">Escolha a Forma:</label><br>
-    <select id="forma" required></select><br><br>
+      <form id="formPersonalizado">
+        <label for="essencia">Escolha a Essência:</label><br>
+        <select id="essencia" required>
+          <option value="" disabled selected>Selecione uma essência</option>
+        </select>
 
-    <label for="quantidade">Quantidade:</label><br>
-    <input type="number" id="quantidade" min="1" value="1" required><br><br>
+        <label for="cor">Escolha a Cor:</label><br>
+        <select id="cor" required>
+          <option value="" disabled selected>Selecione uma cor</option>
+        </select>
 
-    <p id="preco-forma" style="font-weight: bold;"></p>
-    <p id="preco-total" style="font-weight: bold;"></p>
+        <label for="forma">Escolha a Forma:</label><br>
+        <select id="forma" required>
+          <option value="" disabled selected>Selecione uma forma</option>
+        </select>
 
-    <button type="submit">Enviar Pedido pelo WhatsApp</button>
-</form>
+        <label for="quantidade">Quantidade:</label><br>
+        <input type="number" id="quantidade" min="1" value="1" required><br><br>
 
-</section>
+        <p id="preco-forma-texto" style="font-weight: bold;"></p>
+        <p id="preco-total" style="font-weight: bold;"></p>
 
-</body>
+        <button type="submit" id="enviar-pedido" disabled style="background-color: #ccc; cursor: not-allowed;">
+          Enviar Pedido pelo WhatsApp
+        </button>
+      </form>
+
+    </section>
+
+    <button id="leitor-pagina" aria-label="Ler conteúdo da página">
+      🔊 Ler Página
+    </button>
+
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Login</h3>
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input type="password" id="login-password" placeholder="Senha" required />
+        <button id="login-submit">Entrar</button>
+        <p>Não tem conta? <a href="#" id="criar-conta">Criar conta</a></p>
+      </div>
+    </div>
+
+    <div id="painel-admin" style="display: none; margin: 40px auto; max-width: 800px;">
+      <h2 style="text-align: center; margin-bottom: 20px;">🔧 Painel de Administração</h2>
+
+      <div class="caixa-admin">
+        <h3>Essências</h3>
+        <ul id="lista-essencias"></ul>
+        <input type="text" id="nova-essencia" placeholder="Nova essência">
+        <button onclick="adicionarEssencia()">Adicionar</button>
+      </div>
+
+      <div class="caixa-admin">
+        <h3>Cores</h3>
+        <ul id="lista-cores"></ul>
+        <input type="text" id="nova-cor" placeholder="Nova cor">
+        <button onclick="adicionarCor()">Adicionar</button>
+      </div>
+
+      <div class="caixa-admin">
+        <h3>Formas</h3>
+        <ul id="lista-formas"></ul>
+        <input type="text" id="nova-forma" placeholder="Nome da forma">
+        <input type="number" id="preco-forma" placeholder="Preço">
+        <button type="button" onclick="adicionarForma()">Adicionar</button>
+      </div>
+    </div>
+  </body>
 </html>

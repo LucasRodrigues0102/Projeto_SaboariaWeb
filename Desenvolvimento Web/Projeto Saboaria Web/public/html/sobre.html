@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre a Saboaria</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div id="logo"><img src="../img/LOGO-Saboaria-Web.png" alt="Logo"></div>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="faleconosco.html">Fale Conosco</a>
+      <a href="#" id="btn-login">Login</a>
+    </nav>
+  </header>
+
+  <main class="conteudo-pagina">
+    <h2>Sobre a Saboaria</h2>
+    <p>
+      Bem-vindo à nossa loja de sabonetes artesanais, onde cada detalhe é feito com carinho, cuidado e ingredientes de qualidade.<br>
+
+      Nossa missão é transformar o seu momento de autocuidado em uma experiência sensorial única. Todos os nossos sabonetes são produzidos artesanalmente, com fórmulas naturais e base glicerinada vegetal, respeitando a sua pele e o meio ambiente.<br>
+
+      Mais do que um produto, entregamos propósito: acreditamos no poder do simples, do feito à mão e do que é criado com amor. Por isso, cada sabonete é exclusivo – pensado para hidratar, perfumar suavemente e cuidar de você de forma especial.<br>
+
+      Além das nossas linhas para uso pessoal, também criamos lembrancinhas para aniversários, chás de bebê e outras ocasiões especiais. São opções delicadas que encantam os convidados e tornam qualquer celebração ainda mais memorável.<br>
+
+      Seja para cuidar de si ou surpreender alguém querido, aqui você encontra uma opção natural, bonita e cheia de significado.
+    </p>
+  </main>
+
+  <button id="leitor-pagina" aria-label="Ler conteúdo da página">
+    🔊 Ler Página
+  </button>
+
+  <div id="login-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Login</h3>
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Senha" required />
+      <button id="login-submit">Entrar</button>
+      <p>Não tem conta? <a href="#" id="criar-conta">Criar conta</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipe de Desenvolvimento</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div id="logo"><img src="../img/LOGO-Saboaria-Web.png" alt="Logo"></div>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="faleconosco.html">Fale Conosco</a>
+      <a href="#" id="btn-login">Login</a>
+    </nav>
+  </header>
+
+  <main class="conteudo-pagina">
+    <h2>Sobre Desenvolvedores</h2>
+<p>
+  Este site foi desenvolvido por <strong>Isac</strong>, <strong>Giovana</strong> e <strong>Lucas</strong>, estudantes do curso de 
+  <em>Tecnologia em Análise e Desenvolvimento de Sistemas</em> no 
+  <strong>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) – Câmpus Campinas</strong>.
+</p>
+<p>
+  O projeto tem como objetivo aplicar conhecimentos de desenvolvimento web em um contexto real, 
+  unindo tecnologia e empreendedorismo familiar. A criação do site visa auxiliar na divulgação 
+  e venda de sabonetes artesanais, promovendo produtos naturais, sustentáveis e feitos com carinho.
+</p>
+
+  </main>
+
+  <button id="leitor-pagina" aria-label="Ler conteúdo da página">
+  🔊 Ler Página
+  </button>
+
+  
+  <div id="login-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Login</h3>
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Senha" required />
+      <button id="login-submit">Entrar</button>
+      <p>Não tem conta? <a href="#" id="criar-conta">Criar conta</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

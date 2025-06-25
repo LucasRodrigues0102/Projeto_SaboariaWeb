@@ -204,3 +204,142 @@ select {
   font-size: 18px;
   line-height: 1.6;
 }
+
+#leitor-pagina {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #7e69a0;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+#leitor-pagina:hover {
+  background-color: #5e4e79;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background-color: #7e69a0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.caixa-admin {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.caixa-admin h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.caixa-admin ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.caixa-admin ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 4px 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.caixa-admin input {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+}
+
+.caixa-admin button {
+  padding: 5px 10px;
+  background-color: #4682b4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.caixa-admin button:hover {
+  background-color: #336699;
+}
+
+.caixa-admin ul li button {
+  background-color: #cc0000;
+  color: white;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.caixa-admin ul li button:hover {
+  background-color: #a80000;
+}
